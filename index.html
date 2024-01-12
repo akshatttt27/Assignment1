@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <title>FrontEnd Home</title>
+  </head>
+  <body>
+    <div class="flex flex-col lg:flex-row w-full h-screen">
+      <div class="lg:w-1/2 lg:h-screen relative">
+        <div class="carousel-container relative w-full h-full">
+          <!-- Carousel Slides -->
+          <img
+            src="images/product one.webp"
+            class="object-cover w-full h-full carousel-slide"
+          />
+          <img
+            src="images/product two.webp"
+            class="object-cover w-full h-full carousel-slide hidden"
+          />
+          <img
+            src="images/product three.webp"
+            class="object-cover w-full h-full carousel-slide hidden"
+          />
+          <img
+            src="images/product four.webp"
+            class="object-cover w-full h-full carousel-slide hidden"
+          />
+          <img
+            src="images/product five.webp"
+            class="object-cover w-full h-full carousel-slide hidden"
+          />
+          <img
+            src="images/product six.webp"
+            class="object-cover w-full h-full carousel-slide hidden"
+          />
+  
+          <!-- Image Gallery -->
+          <div class="lg:w-1/2 lg:overflow-y-auto absolute top-0 right-0 bottom-0 left-50 lg:left-[-8rem]
+          flex flex-col items-center justify-center">
+            <img
+              src="images/product one.webp"
+              class="w-16 h-16 mb-2 cursor-pointer lg:w-20 lg:h-20"
+              onclick="showSlide(0)"
+            />
+            <img
+              src="images/product two.webp"
+              class="w-16 h-16 mb-2 cursor-pointer lg:w-20 lg:h-20"
+              onclick="showSlide(1)"
+            />
+            <img
+              src="images/product three.webp"
+              class="w-16 h-16 mb-2 cursor-pointer lg:w-20 lg:h-20"
+              onclick="showSlide(2)"
+            />
+            <img
+              src="images/product four.webp"
+              class="w-16 h-16 mb-2 cursor-pointer lg:w-20 lg:h-20"
+              onclick="showSlide(3)"
+            />
+            <img
+              src="images/product five.webp"
+              class="w-16 h-16 mb-2 cursor-pointer lg:w-20 lg:h-20"
+              onclick="showSlide(4)"
+            />
+            <img
+              src="images/product six.webp"
+              class="w-16 h-16 mb-2 cursor-pointer lg:w-20 lg:h-20"
+              onclick="showSlide(5)"
+            />
+          </div>
+        </div> 
+      </div> 
+      <div
+        class="lg:w-1/2 bg-[#F6E6D9] flex flex-col space-y-5 p-5 items-center justify-start h-full overflow-y-auto"
+      >
+        <h2 class="text-5xl text-center lg:text-left">
+          "Drizzle” & “Sizzle” <br />
+          <p class="underline underline-offset-1">Extra Virgin Olive Oil</p>
+        </h2>
+        <div class="flex flex-row space-x-3">
+          <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="font-semibold">964 Reviews</p>
+        </div>
+
+        <div
+          class="border-2 bg-[#FFF4EC] rounded-lg flex flex-col space-y-5 p-5 border-[1px] border-gray-700"
+        >
+          <h1>Quantity</h1>
+          <div class="flex flex-row space-x-3">
+            <div
+              id="set1"
+              class="flex flex-col items-center h-28 w-24 space-y-2 rounded-lg justify-center cursor-pointer border border-black bg-[#9EEF80] quantity-button"
+              onclick="updatePrice(1, 37, 0.10, 'set1')"
+            >
+              <p class="font-semibold text-[23px]">1</p>
+              <p class="font-semibold text-[16px]">Set</p>
+              <span class="text-gray-500 text-[10px]">+10% off</span>
+            </div>
+            <div
+              id="set2"
+              class="flex flex-col items-center h-28 w-24 quantity-button space-y-2 rounded-lg justify-center cursor-pointer border border-black hover:bg-[#F6E6D9]"
+              onclick="updatePrice(2, 37, 0.14 , 'set2')"
+            >
+              <p class="font-semibold text-[23px]">2</p>
+              <p class="font-semibold text-[16px]">Sets</p>
+              <span class="text-gray-300 text-[10px]"
+                >Free Shipping!<br />
+                +14% off</span
+              >
+            </div>
+            <div
+              id="set3"
+              class="flex flex-col items-center h-28 w-24 quantity-button space-y-2 rounded-lg justify-center cursor-pointer border border-black hover:bg-[#F6E6D9]"
+              onclick="updatePrice(1, 38, 0.10, 'set3')"
+            >
+              <p class="font-semibold text-[23px]">3</p>
+              <p class="font-semibold text-[16px]">Sets</p>
+              <span class="text-gray-300 text-[10px]"
+                >Free Shipping! <br />
+                +15% off</span
+              >
+            </div>
+            <div
+              id="set6"
+              class="flex flex-col items-center h-28 w-24 space-y-2 quantity-button rounded-lg justify-center cursor-pointer border border-black hover:bg-[#F6E6D9]"
+              onclick="updatePrice(1, 47, 0.10, 'set6')"
+            >
+              <p class="font-semibold text-[23px]">6</p>
+              <p class="font-semibold text-[16px]">Sets</p>
+              <span class="text-gray-300 text-[10px]"
+                >Free Shipping! <br />
+                +17% off</span
+              >
+            </div>
+          </div>
+          <div
+            class="border-t border-dashed border-gray-800 flex flex-row justify-between pt-3"
+          >
+            <div class="flex flex-row space-x-2 items-center">
+              <input
+                class="text-[#9EEF80] focus:ring-[#9EEF80]"
+                name="onetime"
+                type="radio"
+                onchange="updatePurchaseOption()"
+                id="onetimeOption"
+              />
+              <label for="onetimeOption">One Time Purchase</label>
+            </div>
+            <p id="price">$37</p>
+          </div>
+          <div
+            class="border-t border-dashed border-gray-800 flex flex-row justify-between pt-3"
+          >
+            <div class="flex flex-row space-x-2 items-center">
+              <input
+                class="text-[#9EEF80] focus:ring-[#9EEF80]"
+                name="onetime"
+                type="radio"
+                onchange="updatePurchaseOption()"
+                id="subscribeOption"
+              />
+              <label for="subscribeOption">Subscribe & Save</label>
+            </div>
+            <p id="discountedPrice">
+              <span class="line-through text-gray-400">$37</span> $33.30
+            </p>
+          </div>
+
+          <button
+            id="cartButton"
+            class="bg-[#D1E030] rounded-full p-2 border border-gray-700 border-b-2 border-dashed hover:border-solid"
+            onclick="addToCart()"
+          >
+            Add to Cart -$<span id="cartPrice">37</span>
+          </button>
+          <p class="w-full lg:w-96 text-center">
+            *HEADS UP! MULTIPLE SETS OF DRIZZLE & SIZZLE SHIP IN THE SAME BOX!
+            TO ORDER INDIVIDUALLY PACKAGED GIFT SETS, CLICK HERE!
+          </p>
+        </div>
+
+        <div class="w-full lg:w-[450px] flex flex-col mt-5 lg:mt-0">
+          <div class="flex-row flex space-x-2">
+            <div
+              id="DESCRIPTION-button"
+              class="py-1 px-5 rounded-lg border-t-[1px] border-x-[1px] border-gray-700 bg-[#3C422E] text-white basis-1/3 text-center cursor-pointer active"
+              onclick="toggleAccordion('DESCRIPTION')"
+            >
+              <p>DESCRIPTION</p>
+            </div>
+            <div
+              id="Harvest-button"
+              class="py-1 px-5 rounded-lg border-t-[1px] border-x-[1px] border-gray-700 basis-1/3 text-center cursor-pointer"
+              onclick="toggleAccordion('Harvest')"
+            >
+              <p>Harvest</p>
+            </div>
+            <div
+              id="use-case-button"
+              class="py-1 px-5 rounded-lg border-t-[1px] border-x-[1px] border-gray-700 basis-1/3 text-center cursor-pointer"
+              onclick="toggleAccordion('use case')"
+            >
+              <p>Use Cases</p>
+            </div>
+          </div>
+          <div
+            class="border-2 border-black rounded-lg p-5 hidden"
+            id="DESCRIPTION"
+          >
+            DRIZZLE: 500ML
+            <br />
+            Extra Virgin finishing oil made from olives that are picked early,
+            when flavor is bold and antioxidants are highest. Made for eating,
+            never heating.
+            <br />
+            SIZZLE: 750ML
+            <br />
+            Extra Virgin cooking oil made from mature, mid-season olives that
+            yield a more mellow flavor. Use it every day, in every way.
+          </div>
+          <div class="border-2 border-black rounded-lg p-5 hidden" id="Harvest">
+            DRIZZLE:
+            <br />
+            Harvested in October, before the olives have ripened fully. Picked
+            by hand because young olives need a firm yank to loosen up.
+            <br />
+            SIZZLE:
+            <br />
+            Harvested in November and December, when the olives are more mature.
+            They’re pretty laid back by this point, so it only takes a few
+            shakes to get them off the branch.
+          </div>
+          <div
+            class="border-2 border-black rounded-lg p-5 hidden"
+            id="use case"
+          >
+            DRIZZLE:
+            <br />
+            A little Drizzle goes a long way! Use it on and around things like
+            ice cream, pesto, popcorn, salads, sandwiches or even directly on
+            your tongue (we won’t tell).
+            <br />
+            SIZZLE:
+            <br />
+            If you would put it in or on top of an oven, use sizzle. Chicken
+            Cutlets, Sheet Pan Veggies, Fried Rice, or even Chocolate Chip
+            Cookies! You name it, Sizzle sizzles it.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion script -->
+    <script>
+      // Function to toggle accordion tabs
+      function toggleAccordion(tabId) {
+        const tabs = ["DESCRIPTION", "Harvest", "use case"];
+
+        tabs.forEach((tab) => {
+          const tabElement = document.getElementById(tab);
+          const tabButton = document.getElementById(tab + "-button");
+
+          if (tab === tabId) {
+            tabElement.classList.remove("hidden");
+            tabButton.classList.add("active");
+          } else {
+            tabElement.classList.add("hidden");
+            tabButton.classList.remove("active");
+          }
+        });
+      }
+
+      // Show content of the first tab by default
+      toggleAccordion("DESCRIPTION");
+    </script>
+    <script>
+      let selectedQuantity = 1;
+      let basePrice = 37;
+      let discount = 0.1;
+      let selectedOption = "onetime";
+
+      function updatePrice(quantity, price, discountRate, activeSet) {
+        selectedQuantity = quantity;
+        basePrice = price;
+        discount = discountRate;
+
+        const priceElement = document.getElementById("price");
+        const discountedPriceElement =
+          document.getElementById("discountedPrice");
+        const cartPriceElement = document.getElementById("cartPrice");
+
+        const newPrice = basePrice * quantity;
+        const discountedPrice = newPrice * (1 - discount);
+
+        priceElement.textContent = `$${newPrice}`;
+        discountedPriceElement.innerHTML = `<span class="line-through text-gray-400">$${newPrice}</span> $${discountedPrice}`;
+        cartPriceElement.textContent = newPrice;
+
+        // Remove active class from all sets
+        const allButtons = document.querySelectorAll(".quantity-button");
+        allButtons.forEach((button) => {
+          button.classList.remove("bg-[#9EEF80]", "hover:bg-[#F6E6D9]");
+        });
+
+        // Add active class to the clicked set
+        const activeSetElement = document.getElementById(activeSet);
+        activeSetElement.classList.add("bg-[#9EEF80]", "hover:bg-[#F6E6D9]");
+
+        updatePurchaseOption(); // Update purchase option when quantity changes
+      }
+
+      function updatePurchaseOption() {
+        const oneTimeRadio = document.querySelector('input[name="onetime"]');
+        const subscribeRadio = document.querySelector(
+          'input[name="subscribe"]'
+        );
+        const selectedOption = oneTimeRadio.checked ? "onetime" : "subscribe";
+
+        const cartButton = document.getElementById("cartButton");
+        const cartPriceElement = document.getElementById("cartPrice");
+
+        if (selectedOption === "onetime") {
+          cartButton.textContent = `Add to Cart -$${
+            selectedQuantity * basePrice
+          }`;
+          cartPriceElement.textContent = selectedQuantity * basePrice;
+        } else {
+          const discountedPrice = selectedQuantity * basePrice * (1 - discount);
+          cartButton.textContent = `Add to Cart -$${discountedPrice.toFixed(
+            2
+          )}`;
+          cartPriceElement.textContent = discountedPrice.toFixed(2);
+        }
+      }
+
+      function addToCart() {
+        // Implement your cart logic here
+        console.log(
+          `Added ${selectedQuantity} sets to the cart. Option: ${selectedOption}`
+        );
+      }
+    </script>
+    <script>
+      const slides = document.querySelectorAll(".carousel-slide");
+      const dots = document.querySelectorAll(".dot");
+
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide) => slide.classList.add("hidden"));
+        slides[index].classList.remove("hidden");
+
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+
+      setInterval(nextSlide, 3000); // Auto-advance every 3 seconds
+    </script>
+  </body>
+</html>
